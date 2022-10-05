@@ -7,6 +7,7 @@ import { Rating } from '@material-ui/lab';
 import { useGlobalContext } from '../../context';
 
 import useStyles from './styles';
+import mapStyles from './mapStyles';
 
 const Map = () => {
   const { places } = useSelector(state => state.places)
@@ -22,7 +23,7 @@ const Map = () => {
         center={coordinates}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
-        options={{ disableDefaultUI: true, zoomControl: true }}
+        options={{ disableDefaultUI: true, zoomControl: true, styles: mapStyles }}
         onChange={(e) => {
           setCoordinates({ lat: e.center.lat, lng: e.center.lng })
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw })
