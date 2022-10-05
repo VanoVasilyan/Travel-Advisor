@@ -14,7 +14,7 @@ export const getPlacesData = createAsyncThunk('placesData', async ({ bounds: { s
                     tr_longitude: ne.lng,
                 },
                 headers: {
-                    'X-RapidAPI-Key': 'f26b201dc8mshb31cafc285c4670p170c46jsn66be9cb2166b',
+                    'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_TRAVEL_API_KEY,
                     'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
                 }
             });
